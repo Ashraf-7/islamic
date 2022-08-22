@@ -424,7 +424,7 @@ function getDoaa() {
 
 // Sajdahs Ayahs
 function getSajdahs() {
-    fetch('http://api.alquran.cloud/v1/sajda/quran-uthmani')
+    fetch('https://api.alquran.cloud/v1/sajda/quran-uthmani')
         .then(res => res.json())
         .then(data => {
             const ayahs = data.data.ayahs

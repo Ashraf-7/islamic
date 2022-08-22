@@ -361,17 +361,17 @@ const names = getEl(".allah-names")
 
 getNames()
 function getNames() {
-  fetch(`../allah-names.json`)
-    .then(res => res.json())
-    .then(data => {
-      names.innerHTML = ''
-      data.forEach(e => {
+  fetch(`../json/allah-names.json`)
+    .then((res) => res.json())
+    .then((data) => {
+      names.innerHTML = "";
+      data.forEach((e) => {
         names.innerHTML += `
         <p class="name">${e.name}
           <span class="text">${e.text}</span>
         </p>
-        <p class="white-space"></p>`
-      })
+        <p class="white-space"></p>`;
+      });
     });
 }
 
@@ -380,22 +380,21 @@ const azkar = getEl(".azkar")
 
 getAzkar()
 function getAzkar() {
-  fetch(`../azkar_api.json`)
-    .then(res => res.json())
-    .then(data => {
-      const azkarData = data.data
-      azkar.innerHTML = ''
-      azkarData.forEach(e => {
-          azkar.innerHTML += `<div class="zekr" data-text=${e.text} data-audio=${e.audio_url}>${e.title}</div>`
-          getEl(".zekr", 1).forEach(zekr => {
-            zekr.addEventListener("click", () => {
-              const zekrText = zekr.dataset.text
-              const zekrAudio = zekr.dataset.audio
-              
-            })
-          })
-        })
-      })
+  fetch(`../json/azkar_api.json`)
+    .then((res) => res.json())
+    .then((data) => {
+      const azkarData = data.data;
+      azkar.innerHTML = "";
+      azkarData.forEach((e) => {
+        azkar.innerHTML += `<div class="zekr" data-text=${e.text} data-audio=${e.audio_url}>${e.title}</div>`;
+        getEl(".zekr", 1).forEach((zekr) => {
+          zekr.addEventListener("click", () => {
+            const zekrText = zekr.dataset.text;
+            const zekrAudio = zekr.dataset.audio;
+          });
+        });
+      });
+    });
 }
 
 // Al-Doaa
@@ -403,7 +402,7 @@ const quranDoaa = getEl(".quran-doaa")
 
 getDoaa()
 function getDoaa() {
-  fetch(`../quran-prayers.json`)
+  fetch(`../json/quran-prayers.json`)
     .then(res => res.json())
     .then(data => {
       const prayerData = data.data

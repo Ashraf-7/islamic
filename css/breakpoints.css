@@ -1,0 +1,150 @@
+/**************************/
+/* BELOW 1344px (Smaller desktops) */
+/**************************/
+
+@media (max-width: 84em) {
+  .hero-titel {
+    font-size: 4.4rem;
+  }
+}
+
+/**************************/
+/* BELOW 1200px (Landscape Tablets) */
+/**************************/
+
+@media (max-width: 75em) {
+  html {
+    /* 9px */
+    font-size: 56.25%;
+  }
+
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+
+  .pray-time-card svg {
+    width: 24rem;
+    height: 24rem;
+  }
+}
+
+/**************************/
+/* BELOW 1040px (pray-time-card problem) */
+/**************************/
+
+@media (max-width: 65em) {
+  .pray-time-card svg {
+    width: 22rem;
+  }
+
+  .pray-time-card:last-child {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 64em) {
+  .pray-time-card svg {
+    width: 24rem;
+  }
+}
+
+@media (min-width: 60em) {
+  .header.active {
+    backdrop-filter: blur(3px);
+  }
+}
+
+/**************************/
+/* BELOW 944px (Tablets) */
+/**************************/
+
+@media (max-width: 59em) {
+  html {
+    /* 8px */
+    font-size: 50%;
+  }
+
+  .header.active {
+    background-color: rgba(0 0 0 / 75%);
+  }
+
+  .main-nav-list {
+    position: fixed;
+    inset: 0 70% 0 0;
+    background-color: rgb(0 0 0 / 75%);
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2.4rem;
+    transform: translateX(-100%);
+    transition: transform var(--main-transition) ease-out;
+  }
+
+  .main-nav-list[data-visible="true"] {
+    transform: translateX(0);
+  }
+
+  @supports (backdrop-filter: blur(1.4rem)) {
+    .main-nav-list {
+      background-color: rgb(0 0 0 / 45%);
+      backdrop-filter: blur(1.4rem);
+    }
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 4.2rem;
+    color: #fff;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .hero {
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-btn {
+    margin-inline: auto;
+  }
+
+  .allah-names {
+    gap: 2rem;
+  }
+
+  .pray-time-card svg {
+    width: 23rem;
+    height: 27rem;
+  }
+}
+
+/**************************/
+/* BELOW 704px (Smaller tablets) */
+/**************************/
+
+@media (max-width: 44em) {
+  .allah-names {
+    gap: 1.2rem;
+  }
+
+  .pray-time-card svg {
+    width: 21rem;
+  }
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .open-nav {
+  display: none;
+}
+.mobile-nav-toggle[aria-expanded="false"] .open-nav {
+  display: block;
+}
+.mobile-nav-toggle[aria-expanded="true"] .close-nav {
+  display: block;
+}
+.mobile-nav-toggle[aria-expanded="false"] .close-nav {
+  display: none;
+}

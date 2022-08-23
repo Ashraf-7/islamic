@@ -361,7 +361,7 @@ const names = getEl(".allah-names")
 
 getNames()
 function getNames() {
-  fetch(`../json/allah-names.json`)
+  fetch(`https://ashraf-7.github.io/islamic/json/allah-names.json`)
     .then((res) => res.json())
     .then((data) => {
       names.innerHTML = "";
@@ -380,7 +380,7 @@ const azkar = getEl(".azkar")
 
 getAzkar()
 function getAzkar() {
-  fetch(`../json/azkar_api.json`)
+  fetch(`https://ashraf-7.github.io/islamic/json/azkar_api.json`)
     .then((res) => res.json())
     .then((data) => {
       const azkarData = data.data;
@@ -402,23 +402,23 @@ const quranDoaa = getEl(".quran-doaa")
 
 getDoaa()
 function getDoaa() {
-  fetch(`../json/quran-prayers.json`)
-    .then(res => res.json())
-    .then(data => {
-      const prayerData = data.data
-      quranDoaa.innerHTML = ''
+  fetch(`https://ashraf-7.github.io/islamic/json/quran-prayers.json`)
+    .then((res) => res.json())
+    .then((data) => {
+      const prayerData = data.data;
+      quranDoaa.innerHTML = "";
 
-      prayerData.forEach(prayer => {
-        const surah = prayer.surah
-        const doaa = prayer.prayer
-        
+      prayerData.forEach((prayer) => {
+        const surah = prayer.surah;
+        const doaa = prayer.prayer;
+
         quranDoaa.innerHTML += `
           <div class="doaa-container">
             <p class="doaa">${doaa}</p>
             <p class="doaa-surah">${surah}</p>
-          </div>`
-      })
-    })
+          </div>`;
+      });
+    });
 }
 
 // Sajdahs Ayahs
